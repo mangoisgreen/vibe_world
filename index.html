@@ -10,9 +10,50 @@
       margin: 0;
       background: #0f172a;
       color: #f1f5f9;
+      min-height: 100vh;
+    }
+    .main-content-wrapper {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .side-image {
+      flex: 1 1 45%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0f172a;
+      min-width: 320px;
+      max-width: 700px;
+      overflow: hidden;
+    }
+    .side-image img {
+      width: 100%;
+      height: 100vh;
+      object-fit: contain;
+      display: block;
+      border-radius: 0 0 0 0;
+      box-shadow: 0 0 32px 0 rgba(0,0,0,0.4);
+    }
+    .content {
+      flex: 2 1 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 2em;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header, footer, section, .cta, .card {
+      background: rgba(17, 24, 39, 0.85);
+      backdrop-filter: blur(2px);
+      border-radius: 12px;
+      margin-bottom: 1.5em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
     }
     header, footer {
-      background: #111827;
       color: #f1f5f9;
       padding: 2em;
       text-align: center;
@@ -26,10 +67,8 @@
       gap: 1em;
     }
     .card {
-      background: #1e293b;
       padding: 1.5em;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
       color: #f1f5f9;
     }
     h1, h2, h3 {
@@ -54,65 +93,92 @@
       color: #f1f5f9;
     }
     .cta {
-      background: #1e293b;
       text-align: center;
       padding: 2em;
       color: #f1f5f9;
     }
+    @media (max-width: 900px) {
+      .main-content-wrapper {
+        flex-direction: column;
+      }
+      .side-image {
+        max-width: 100vw;
+        min-width: 0;
+        height: 40vw;
+        min-height: 200px;
+        max-height: 300px;
+      }
+      .side-image img {
+        height: 100%;
+        width: 100vw;
+        object-fit: cover;
+      }
+      .content {
+        max-width: 100vw;
+        padding: 0 1em;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Your Strategic Launchpad Into Asia</h1>
-    <p><em>Singapore: The Reliable Gateway for Global Storytellers</em></p>
-  </header>
+  <div class="main-content-wrapper">
+    <div class="side-image">
+      <img src="20250516_1429_Film Crew in Singapore_remix_01jvbwewa4ffzsjchxtnpqjeac.png" alt="Film Crew in Singapore">
+    </div>
+    <div class="content">
+      <header>
+        <h1>Your Strategic Launchpad Into Asia</h1>
+        <p><em>Singapore: The Reliable Gateway for Global Storytellers</em></p>
+      </header>
 
-  <section class="grid">
-    <div class="card">
-      <h2>Expand with Confidence</h2>
-      <p>
-        Tap into a stable, neutral base amidst global uncertainty.
-        Singapore offers the security and agility global studios need for
-        long-term creative ventures.
-      </p>
-    </div>
-    <div class="card">
-      <h2>Create for and with Asia</h2>
-      <p>
-        Co-develop culturally resonant content with diverse regional creators.
-        Access Southeast Asia’s 675M+ audience with Singapore as your command center.
-      </p>
-    </div>
-    <div class="card">
-      <h2>Join a Thriving Media-Tech Hub</h2>
-      <p>
-        From soundstages to virtual production, Singapore’s creative ecosystem
-        is equipped to support your global storytelling ambitions across formats.
-      </p>
-    </div>
-    <div class="card">
-      <h2>Access Talent & IP</h2>
-      <ul>
-        <li>Multilingual, multicultural creative workforce</li>
-        <li>Partnerships with top regional IP holders</li>
-        <li>Legal clarity and IP security for your content</li>
-        <li>Regional co-production access across 11+ nations</li>
-      </ul>
-    </div>
-  </section>
+      <section class="grid">
+        <div class="card">
+          <h2>Expand with Confidence</h2>
+          <p>
+            Tap into a stable, neutral base amidst global uncertainty.
+            Singapore offers the security and agility global studios need for
+            long-term creative ventures.
+          </p>
+        </div>
+        <div class="card">
+          <h2>Create for and with Asia</h2>
+          <p>
+            Co-develop culturally resonant content with diverse regional creators.
+            Access Southeast Asia’s 675M+ audience with Singapore as your command center.
+          </p>
+        </div>
+        <div class="card">
+          <h2>Join a Thriving Media-Tech Hub</h2>
+          <p>
+            From soundstages to virtual production, Singapore’s creative ecosystem
+            is equipped to support your global storytelling ambitions across formats.
+          </p>
+        </div>
+        <div class="card">
+          <h2>Access Talent & IP</h2>
+          <ul>
+            <li>Multilingual, multicultural creative workforce</li>
+            <li>Partnerships with top regional IP holders</li>
+            <li>Legal clarity and IP security for your content</li>
+            <li>Regional co-production access across 11+ nations</li>
+          </ul>
+        </div>
+      </section>
 
-  <section class="cta">
-    <h3>Let’s Build Asia’s Next Global Story – Together</h3>
-    <p>
-      Discover why top studios choose Singapore as their base to tell stories
-      that inspire, connect, and transcend borders. From screen to stream,
-      from script to audience – start your next creative journey here.
-    </p>
-    <button>Contact Us to Explore Opportunities</button>
-  </section>
+      <section class="cta">
+        <h3>Let’s Build Asia’s Next Global Story – Together</h3>
+        <p>
+          Discover why top studios choose Singapore as their base to tell stories
+          that inspire, connect, and transcend borders. From screen to stream,
+          from script to audience – start your next creative journey here.
+        </p>
+        <button>Contact Us to Explore Opportunities</button>
+      </section>
 
-  <footer>
-    &copy; 2025 Global Partnerships & Ecosystem Division, Singapore. All rights reserved.
-  </footer>
+      <footer>
+        &copy; 2025 Global Partnerships & Ecosystem Division, Singapore. All rights reserved.
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
